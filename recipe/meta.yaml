@@ -1,4 +1,4 @@
-{% set name = "pypardiso" %}
+{% set name = "pardiso4py" %}
 {% set version = "0.3.1" %}
 
 package:
@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/p/pypardiso/pypardiso-{{ version }}.tar.gz
   sha256: c3846870dc2590250980d98568e9dfc99b0271e9e5a9c8714a85cc373e839788
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
