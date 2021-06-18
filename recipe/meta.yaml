@@ -1,13 +1,13 @@
-{% set name = "pardiso4py" %}
-{% set version = "0.2.2" %}
+{% set name = "pypardiso" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/ma-sadeghi/pardiso4py/archive/v{{ version }}.tar.gz
-  sha256: 056c1a7ae87162cc35b1277216d977ec9f3a21f4a978902e477aee935ba6294d
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 41cb729c1fa9e69393d2f1d73f8758282f34a553ef333ad165f3fd41447518db
 
 build:
   noarch: python
@@ -22,8 +22,10 @@ requirements:
     - python
     - mkl
     - numpy
+    - "libblas =*=*mkl"
     - scipy
     - mkl-service
+    - psutil
 
 test:
     imports:
