@@ -1,5 +1,5 @@
 {% set name = "pardiso4py" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pypardiso/pypardiso-{{ version }}.tar.gz
-  sha256: c3846870dc2590250980d98568e9dfc99b0271e9e5a9c8714a85cc373e839788
+  sha256: 1116ffeedf49bb31fdeea2d45076ddf540955c4df272fc4c8bc6b17c4f9d267e
 
 build:
   noarch: python
-  number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -22,13 +22,13 @@ requirements:
     - python >=3.6
     - mkl
     - numpy
-    - "libblas =*=*mkl"
+    - libblas =*=*mkl
     - scipy
     - mkl-service
     - psutil
 
 test:
-    imports:
+  imports:
     - pypardiso
 
 about:
@@ -36,7 +36,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Python interface to the Intel MKL Pardiso library to solve large sparse linear systems of equations'
+  summary: Python interface to the Intel MKL Pardiso library to solve large sparse linear systems of equations
   dev_url: https://github.com/ma-sadeghi/pardiso4py
 
 extra:
